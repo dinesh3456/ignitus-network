@@ -1,8 +1,7 @@
 let cart = [];
 let total = 0;
 let buyerAddress;
-const sellerAddress = "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"; // Seller's Ethereum address
-
+const sellerAddress = "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"; 
 const connectWalletButton = document.getElementById("connect-wallet-button");
 
 if (typeof window.ethereum !== "undefined") {
@@ -27,8 +26,15 @@ if (typeof window.ethereum !== "undefined") {
 }
 
 function addToCart(itemName, price) {
-  cart.push({ name: itemName, price: price });
-  updateCart();
+ 
+  const isItemInCart = cart.some((item) => item.name === itemName);
+
+  if (isItemInCart) {
+    alert("The item is already in the cart.");
+  } else {
+    cart.push({ name: itemName, price: price });
+    updateCart();
+  }
 }
 
 function updateCart() {
@@ -51,6 +57,11 @@ function updateCart() {
 async function checkout() {
   if (!buyerAddress) {
     alert("Please connect your wallet first.");
+    return;
+  }
+
+  if (cart.length === 0) {
+    alert("Your cart is empty.");
     return;
   }
 
@@ -77,6 +88,7 @@ async function checkout() {
       return;
     }
 
+    
     const transaction = {
       from: buyerAddress,
       to: sellerAddress,
@@ -88,6 +100,10 @@ async function checkout() {
     const tx = await web3.eth.sendTransaction(transaction);
     console.log("Transaction hash:", tx.transactionHash);
 
+    cart = [];
+    updateCart();
+
+    
     const pictureElements = document.querySelectorAll(".picture");
     pictureElements.forEach((picture) => {
       const pictureName = picture.querySelector("img").alt;
