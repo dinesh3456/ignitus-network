@@ -1,0 +1,155 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+}
+
+/* CSS for active link */
+.active {
+  font-weight: bold;
+}
+
+/* CSS for main content */
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem;
+}
+
+/* CSS for NFT card */
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+  padding: 1rem;
+  border: 1px solid #333;
+  border-radius: 5px;
+  width: 200px;
+}
+
+/* CSS for NFT image */
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+/* CSS for NFT name */
+.card h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* CSS for NFT price */
+.card p {
+  margin: 0;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* CSS for form */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem;
+}
+
+/* CSS for form input */
+form input {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #333;
+  width: 300px;
+}
+
+/* CSS for form button */
+form button {
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+}
+
+/* CSS for navigation bar */
+nav {
+    display: flex;
+    flex-direction: row;
+}
+
+/* CSS for navigation bar list items */
+nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* CSS for navigation bar list item */
+nav li {
+    margin: 0 1rem;
+}
+
+.buy-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .cart {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-top: 50px;
+    margin-left: 70px;
+    max-width: 500px;
+    max-height: 200px; /* Reduce the maximum height to limit cart size */
+    
+  }
+  
+  .cart h2 {
+    font-size: 20px;
+  }
+  
+  .cart ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .cart li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  #pay-button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  

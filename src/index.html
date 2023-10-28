@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Picture Buying Portal</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
+  </head>
+  <body>
+    <h1>Welcome to the Picture Buying Portal</h1>
+    <button id="connect-wallet-button">Connect MetaMask</button>
+
+    <div class="picture-container">
+      <div class="picture">
+        <img src="pictures/picture1.jpg" alt="Picture 1" />
+        <p>Price: 0.00000000000000001 ETH</p>
+        <button
+          class="buy-button"
+          onclick="addToCart('Picture 1', 0.00000000000000001)"
+        >
+          Buy
+        </button>
+      </div>
+
+      <div class="picture">
+        <img src="pictures/picture2.jpg" alt="Picture 2" />
+        <p>Price: 0.00000000000000001 ETH</p>
+        <button
+          class="buy-button"
+          onclick="addToCart('Picture 2',0.00000000000000001)"
+        >
+          Buy
+        </button>
+      </div>
+
+      <div class="picture">
+        <img src="pictures/picture3.jpg" alt="Picture 3" />
+        <p>Price: 0.00000000000000001 ETH</p>
+        <button
+          class="buy-button"
+          onclick="addToCart('Picture 3', 0.00000000000000001)"
+        >
+          Buy
+        </button>
+      </div>
+    </div>
+
+    <div class="cart">
+      <h2>Shopping Cart</h2>
+      <ul id="cart-items"></ul>
+      <p>Total Price: ETH <span id="total-price">0</span></p>
+      <button id="pay-button" onclick="checkout()">Pay</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

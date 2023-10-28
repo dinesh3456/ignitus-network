@@ -1,0 +1,82 @@
+<!-- FILEPATH: /d:/ignitus networks/src/index1.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NFT Marketplace</title>
+    <link rel="stylesheet" href="styles1.css" />
+  </head>
+  <body>
+    <header>
+      <h1>NFT Marketplace</h1>
+      <nav>
+        <ul>
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="#">CreateNFT</a></li>
+          <li><a href="#">List of nft</a></li>
+          <li><a href="#">Purchase</a></li>
+          <li><button id="connect-wallet-button">Connect MetaMask</button></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <!-- Home page content -->
+      <div id="home">
+        <div class="card">
+          <img src="https://via.placeholder.com/150" alt="NFT image" />
+          <h3>NFT Name</h3>
+          <p>NFT Price</p>
+        </div>
+        <!-- Add more NFT cards here -->
+        <p>No NFT present</p>
+        <br />
+        <div class="cart">
+          <h2>Shopping Cart</h2>
+          <ul id="cart-items"></ul>
+          <p>Total Price: ETH <span id="total-price">0</span></p>
+          <button id="pay-button" onclick="checkout()">Pay</button>
+        </div>
+      </div>
+
+      <!-- CreateNFT page content -->
+      <div id="create-nft" style="display: none">
+        <form>
+          <label for="url">URL:</label>
+          <input type="text" id="url" name="url" required />
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+          <label for="price">Price:</label>
+          <input type="number" id="price" name="price" required />
+          <button type="submit">Mint and list NFT</button>
+        </form>
+      </div>
+
+      <!-- List of nft page content -->
+      <div id="list-nft" style="display: none">
+        <div class="card">
+          <img src="https://via.placeholder.com/150" alt="NFT image" />
+          <h3>NFT Name</h3>
+          <p>NFT Price</p>
+        </div>
+        <!-- Add more NFT cards here -->
+        <p>No listed NFT</p>
+      </div>
+
+      <!-- Purchase page content -->
+      <div id="purchase" style="display: none">
+        <div class="card">
+          <img src="https://via.placeholder.com/150" alt="NFT image" />
+          <h3>NFT Name</h3>
+          <p>NFT Price</p>
+        </div>
+        <!-- Add more NFT cards here -->
+        <p>No items purchased</p>
+      </div>
+    </main>
+
+    <script src="script1.js"></script>
+  </body>
+</html>
