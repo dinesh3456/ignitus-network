@@ -55,7 +55,7 @@ purchaseLink.addEventListener("click", () => {
   purchaseLink.classList.add("active");
 });
 
-const sellerAddress = "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"; // Seller's Ethereum address
+const sellerAddress = "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"; 
 
 const connectWalletButton = document.getElementById("connect-wallet-button");
 
@@ -81,7 +81,7 @@ if (typeof window.ethereum !== "undefined") {
 }
 
 function addToCart(itemName, price) {
-  // Check if the item is already in the cart
+  
   const isItemInCart = cart.some((item) => item.name === itemName);
 
   if (isItemInCart) {
@@ -133,7 +133,6 @@ async function checkout() {
 
     const buyerBalance = await web3.eth.getBalance(buyerAddress);
 
-    // Multiply the total to make it a whole number and then convert to wei
     const ethCost = web3.utils.toWei((total * 1e18).toString(), "wei");
 
     if (buyerBalance < ethCost) {
@@ -144,23 +143,20 @@ async function checkout() {
       return;
     }
 
-    // Define the transaction
     const transaction = {
       from: buyerAddress,
       to: sellerAddress,
       value: ethCost,
-      gas: 50000, // Adjust the gas limit as needed
+      gas: 50000, 
       gasPrice: web3.utils.toWei("30", "gwei"),
     };
 
-    // Send the transaction
     const tx = await web3.eth.sendTransaction(transaction);
     console.log("Transaction hash:", tx.transactionHash);
 
     cart = [];
     updateCart();
 
-    // Hide pictures only if the transaction is successful
     const pictureElements = document.querySelectorAll(".picture");
     pictureElements.forEach((picture) => {
       const pictureName = picture.querySelector("img").alt;
